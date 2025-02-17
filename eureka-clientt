@@ -1,0 +1,28 @@
+#############################################333
+add below dependency
+1) web
+2) eureka client
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+################################################
+add @EnableDiscoveryClient in starter class
+
+######################################################
+add below code in properties file
+
+spring.application.name=demo
+server.port=9091
+eureka.client.service-url.defaultZone=${DISCOVER_URL:http://localhost:9999}/eureka/
+            (or)
+spring.application.name=demo
+server.port=9091
+eureka.client.service-url.defaultZone=http://localhost:9999/eureka/
+
